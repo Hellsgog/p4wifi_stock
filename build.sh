@@ -6,14 +6,14 @@
 # Set basic parameters
 DATE_START=$(date +"%s")
 
-MACKAY_VER="Mackay_1.4"
+MACKAY_VER="Mackay_1.5"
 
 export ARCH=arm
 export LOCALVERSION="-"`echo $MACKAY_VER`
-export CROSS_COMPILE=/home/kasper/android/cm101/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
+export CROSS_COMPILE=/home/kasper/android/omni/prebuilts/gcc/linux-x86/arm/arm-eabi-4.4.3/bin/arm-eabi-
 
-BASE_DIR=/home/kasper/android/cm101/kernel/samsung
-SOURCE_DIR=`echo $BASE_DIR`/p4
+BASE_DIR=/home/kasper/android/
+SOURCE_DIR=`echo $BASE_DIR`/p4_stock
 OUTPUT_DIR=`echo $BASE_DIR`/output/galaxytab
 KERNEL_DIR=`echo $OUTPUT_DIR`/kernel
 MODULES_DIR=`echo $OUTPUT_DIR`/modules
@@ -38,7 +38,7 @@ cp arch/arm/boot/zImage $KERNEL_DIR
 # Create flashable zip
 cd $OUTPUT_DIR
 zip -r `echo $MACKAY_VER`.zip *
-cp `echo $MACKAY_VER`.zip /home/kasper/AndroidFlash/p4wifi/stock_kernel
+cp `echo $MACKAY_VER`.zip /home/kasper/AndroidFlash/p4wifi/
 
 DATE_END=$(date +"%s")
 echo
