@@ -33,12 +33,12 @@
 
 #include <trace/events/power.h>
 
-#define FREQCOUNT 13
-#define CPUMVMAX 1375
+#define FREQCOUNT 15
+#define CPUMVMAX 1475
 #define CPUMVMIN 700
-int cpufrequency[FREQCOUNT]  = { 1600000, 1500000, 1400000, 1200000, 1000000, 912000, 816000, 760000, 608000, 456000, 312000, 216000, 150000 };
-int cpuvoltage[FREQCOUNT] = { 1375, 1325, 1250, 1175, 1125, 1075, 1000, 975, 950, 900, 850, 775, 725};
-int cpuuvoffset[FREQCOUNT] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+int cpufrequency[FREQCOUNT]  = { 1704000, 1640000, 1600000, 1500000, 1400000, 1200000, 1000000, 912000, 816000, 760000, 608000, 456000, 312000, 216000, 150000 };
+int cpuvoltage[FREQCOUNT] = { 1475, 1450, 1425, 1350, 1275, 1175, 1125, 1075, 1000, 975, 950, 900, 850, 775, 725};
+int cpuuvoffset[FREQCOUNT] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 /* Description of __CPUFREQ_KOBJ_DEL_DEADLOCK_FIX
  *
@@ -647,7 +647,7 @@ static ssize_t store_UV_mV_table(struct cpufreq_policy *policy, char *buf, size_
 {
 	int tmptable[FREQCOUNT];
 	int i;
-	unsigned int ret = sscanf(buf, "%d %d %d %d %d %d %d %d %d %d %d %d %d", &tmptable[0], &tmptable[1], &tmptable[2], &tmptable[3], &tmptable[4], 	&tmptable[5], &tmptable[6], &tmptable[7], &tmptable[8], &tmptable[9], &tmptable[10], &tmptable[11], &tmptable[12]);
+	unsigned int ret = sscanf(buf, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d", &tmptable[0], &tmptable[1], &tmptable[2], &tmptable[3], &tmptable[4], 	&tmptable[5], &tmptable[6], &tmptable[7], &tmptable[8], &tmptable[9], &tmptable[10], &tmptable[11], &tmptable[12], &tmptable[13], &tmptable[14]);
 	if (ret != FREQCOUNT)
 		return -EINVAL;
 	for (i = 0; i < FREQCOUNT; i++)
