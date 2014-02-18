@@ -10,7 +10,7 @@ MACKAY_VER="Mackay_1.6"
 
 export ARCH=arm
 export LOCALVERSION="-"`echo $MACKAY_VER`
-export CROSS_COMPILE=/home/kasper/android/omni/prebuilts/gcc/linux-x86/arm/arm-eabi-4.4.3/bin/arm-eabi-
+export CROSS_COMPILE=/home/kasper/android/nameless/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-
 
 BASE_DIR=/home/kasper/android
 SOURCE_DIR=`echo $BASE_DIR`/p4wifi_stock
